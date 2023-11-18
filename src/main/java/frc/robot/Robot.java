@@ -19,6 +19,15 @@ public class Robot extends TimedRobot {
 
   private RobotContainer m_robotContainer;
 
+  Spark m_frontRight = new Spark(0);
+  Spark m_rearRight = new Spark(2);
+  MotorControllerGroup m_right = new MotorControllerGroup(m_frontRight, m_rearRight);
+
+  Spark m_frontLeft = new Spark(1);
+  Spark m_rearLeft = new Spark(3);
+  MotorControllerGroup m_left = new MotorControllerGroup(m_frontLeft, m_rearLeft);
+
+  DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -82,6 +91,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {}
+  
 
   @Override
   public void testInit() {
